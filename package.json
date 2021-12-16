@@ -1,0 +1,19 @@
+{
+  "name": "js-course-project-2-karimov",
+  "version": "1.0.0",
+  "description": "shopping website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoeldVisard/JS-Course-Project-2-Karimov.git"
+  },
+  "author": "Karimov Rodion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NoeldVisard/JS-Course-Project-2-Karimov/issues"
+  },
+  "homepage": "https://github.com/NoeldVisard/JS-Course-Project-2-Karimov#readme"
+}
