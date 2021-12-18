@@ -5,6 +5,8 @@
         {{ item.id }}
         {{ item.name }}
         {{ item.price }}
+        <button @click="incCountItem(item)">+</button>
+        <button @click="decCountItem(item)">-</button>
     </div>
 </template>
 
@@ -12,8 +14,18 @@
 export default {
     props: {
         item: {
-            type: Array,
+            type: Object,
             default: []
+        }
+    },
+    methods: {
+        incCountItem(item) {
+            console.log('incCountItem')
+            this.$store.dispatch('incCountItem', item)
+            // console.log(item)
+        },
+        decCountItem() {
+            console.log('test')
         }
     }
 }

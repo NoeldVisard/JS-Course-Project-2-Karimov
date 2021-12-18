@@ -4,8 +4,8 @@
         <router-link to="/cart">Cart</router-link>
         <div class="items">
             <Item
-                v-for="(item, key) of allItems"
-                :key="key"
+                v-for="item of allItems"
+                :key="item.id"
                 :item="item"></Item>
         </div>
     </div>
