@@ -23,8 +23,7 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                    <!--                    Submit-->
-                    <input @click="test('Hello, A :)')" class="ghost-button" type="submit" value="SAVE">
+                    <input class="ghost-button" type="submit" value="SAVE">
 
                 </a>
 
@@ -48,9 +47,6 @@ export default {
         }
     },
     methods: {
-        test(text) {
-            console.log(text);
-        },
         changeProfile() {
             console.log('changeProfile method')
             console.log(this.name)
@@ -89,7 +85,8 @@ export default {
 
 .ghost-button:hover,
 .ghost-button:active {
-    background-color: #02dbf8;
+    /*background-color: #02dbf8;*/
+    background-color: #60b5fa;
     color: #000;
 }
 
@@ -146,7 +143,7 @@ body {
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: #60b5fa;
     pointer-events: none;
     transition: .5s;
 }
@@ -155,7 +152,7 @@ body {
 .login-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
-    color: #03e9f4;
+    color: #60b5fa;
     font-size: 12px;
 }
 
@@ -163,7 +160,7 @@ body {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #03e9f4;
+    color: #60b5fa;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -174,13 +171,13 @@ body {
 }
 
 .login-box a:hover {
-    background: #03e9f4;
+    background: #60b5fa;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4,
-    0 0 25px #03e9f4,
-    0 0 50px #03e9f4,
-    0 0 100px #03e9f4;
+    box-shadow: 0 0 5px #60b5fa,
+    0 0 25px #60b5fa,
+    0 0 50px #60b5fa,
+    0 0 100px #60b5fa;
 }
 
 .login-box a span {
