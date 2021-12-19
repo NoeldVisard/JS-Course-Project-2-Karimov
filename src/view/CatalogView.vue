@@ -6,7 +6,8 @@
             <Item
                 v-for="item of allItems"
                 :key="item.id"
-                :item="item"></Item>
+                :item="item"
+            @showModal="showModal"></Item>
         </div>
     </div>
 </template>
@@ -20,6 +21,11 @@ export default {
         Item,
     },
     computed: mapGetters(['allItems']),
+    methods: {
+        showModal(id) {
+            this.$emit('showModal', id)
+        }
+    }
 
 
 }

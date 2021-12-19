@@ -27,5 +27,9 @@ module.exports = {
             template: path.resolve(__dirname, './src/index.html')
         }),
         new VueLoaderPlugin()
-    ]
+    ],
+    // output: {
+    //     path: path.resolve(__dirname, 'dist'),
+    //     filename: "index_bundle.js"
+    // }
 }

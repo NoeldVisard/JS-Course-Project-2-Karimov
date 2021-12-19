@@ -1,10 +1,11 @@
 <template>
     <div class="item">
         Item
-        <img :src="item.src">
+        <img :src="item.src" @click="showModal(item.id)">
         {{ item.id }}
         {{ item.name }}
         {{ item.price }}
+        Chosen: {{ item.count }}
         <button @click="incCountItem(item)">+</button>
         <button @click="decCountItem(item)">-</button>
     </div>
@@ -24,6 +25,9 @@ export default {
         },
         decCountItem(item) {
             this.$store.dispatch('decCountItem', item)
+        },
+        showModal(id) {
+            this.$emit('showModal', id)
         }
     }
 }

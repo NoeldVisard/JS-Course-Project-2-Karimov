@@ -66,6 +66,14 @@ export default {
         },
         buyItems(state) {
             return state.items.filter(it => it.count > 0)
+        },
+        // getItemById(state, id) {
+        //     console.log('id in getItemById ', id)
+        //     return state.items.filter(it => it.id === id)
+        // }
+        getItemById: state => id => {
+            console.log('id in getItemById ', id)
+            return state.items.filter(it => it.id === id)[0]
         }
     },
 }

@@ -3,19 +3,40 @@
         <h1>Shop</h1>
         <hr>
 
-        <router-view />
+        <router-view @showModal="showModal"/>
+
+<!--        <Modal v-if="isModalOpen"/>-->
+        <Modal v-if="isModalOpened"
+        :idModal="idModal"
+        @closeModal="isModalOpened = false"/>
     </div>
 </template>
 
 <script>
+import Modal from './components/Modal.vue'
 
 export default {
     name: 'shop',
+    data() {
+        return {
+            isModalOpened: false,
+            idModal: 0
+        }
+    },
     components: {
-
+        Modal
     },
     async mounted() {
         this.$store.dispatch('createItems')
+    },
+    methods: {
+        showModal(id) {
+            this.idModal = id
+            this.isModalOpened = true
+        },
+        closeModal() {
+            this.isModalOpened = false
+        }
     }
 }
 </script>
