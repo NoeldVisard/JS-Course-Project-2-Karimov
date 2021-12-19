@@ -34,23 +34,27 @@ export default {
                 //     price: ''
                 // }
             ]
-            context.commit('updateItems', items)
+            context.commit('createItems', items)
         },
         async incCountItem(context, item) {
             item.count++
             context.commit('addItem', item)
-            console.log('addItem finished, item: ', item)
+        },
+        async decCountItem(context, item) {
+            if (item.count > 0) {
+                item.count--
+                context.commit('addItem', item)
+            } else console.log('You cannot buy less than 0 \\_(ツ)_/¯ ')
         }
     },
     mutations: {
-        updateItems(state, items) {
+        createItems(state, items) {
             state.items = items
         },
         addItem(state, item) {
             state.items = state.items.filter(it => it.id !== item.id)
             state.items = state.items.concat(item)
             state.items.sort((prev, next) => prev.id - next.id)
-            console.log('state.items: ', state.items)
         }
     },
     state: {

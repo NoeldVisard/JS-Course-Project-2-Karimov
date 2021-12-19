@@ -20,9 +20,7 @@ export default {
         Item,
     },
     computed: mapGetters(['allItems']),
-    async mounted() {
-        this.$store.dispatch('createItems')
-    }
+
 
 }
 </script>

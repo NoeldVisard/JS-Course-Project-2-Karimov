@@ -20,12 +20,10 @@ export default {
     },
     methods: {
         incCountItem(item) {
-            console.log('incCountItem')
             this.$store.dispatch('incCountItem', item)
-            // console.log(item)
         },
-        decCountItem() {
-            console.log('test')
+        decCountItem(item) {
+            this.$store.dispatch('decCountItem', item)
         }
     }
 }

@@ -14,6 +14,9 @@ export default {
     components: {
 
     },
+    async mounted() {
+        this.$store.dispatch('createItems')
+    }
 }
 </script>
 
