@@ -6,7 +6,8 @@
             <Item
                 v-for="item of buyItems"
                 :key="item.id"
-                :item="item"></Item>
+                :item="item"
+                @showModal="$emit('showModal', item.id)"></Item>
         </div>
     </div>
 </template>

@@ -6,27 +6,23 @@
         {{ item.name }}
         {{ item.price }}
         Chosen: {{ item.count }}
-        <button @click="incCountItem(item)">+</button>
-        <button @click="decCountItem(item)">-</button>
+        <IncDecButton :item="item"></IncDecButton>
     </div>
 </template>
 
 <script>
+import IncDecButton from "./IncDecButton.vue";
 export default {
+    components: {IncDecButton},
     props: {
         item: {
             type: Object,
-            default: []
+            default: {}
         }
     },
     methods: {
-        incCountItem(item) {
-            this.$store.dispatch('incCountItem', item)
-        },
-        decCountItem(item) {
-            this.$store.dispatch('decCountItem', item)
-        },
         showModal(id) {
+            console.log('showModal method')
             this.$emit('showModal', id)
         }
     }

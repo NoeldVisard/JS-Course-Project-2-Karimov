@@ -13,8 +13,9 @@
                     <img :src="item.src">
                     {{ item.description }}
                     {{ item.price }}
-                    {{ item.count }}
+                    Chosen: {{ item.count }}
                 </div>
+                <IncDecButton :item="item"></IncDecButton>
             </div>
         </div>
 
@@ -24,8 +25,10 @@
 </template>
 
 <script>
+import IncDecButton from "./IncDecButton.vue";
 export default {
     name: "Modal",
+    components: {IncDecButton},
     props: {
         idModal: {
             type: Number,
