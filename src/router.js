@@ -18,6 +18,10 @@ export default new Router({
         {
             path: '/cart',
             component: () => import('./view/CartView.vue')
+        },
+        {
+            path: '/profile',
+            component: () => import('./view/ProfileView.vue')
         }
     ]
 })

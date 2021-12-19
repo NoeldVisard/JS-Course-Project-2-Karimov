@@ -2,6 +2,7 @@
     <div>
         <h3>Cart</h3>
         <router-link to="/catalog">Catalog</router-link>
+        <router-link to="/profile">Profile</router-link>
         <div class="items">
             <Item
                 v-for="item of buyItems"
