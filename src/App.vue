@@ -3,6 +3,11 @@
         <h1>Shop</h1>
         <hr>
 
+        <router-link to="/catalog">Catalog</router-link>
+        <router-link to="/cart">Cart</router-link>
+        <router-link to="/profile">Profile</router-link>
+        <router-link to="/orders">Orders</router-link>
+
         <router-view @showModal="showModal"/>
 
 <!--        <Modal v-if="isModalOpen"/>-->

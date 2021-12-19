@@ -10,6 +10,7 @@
                 :item="item"
                 @showModal="$emit('showModal', item.id)"></Item>
         </div>
+        <button @click="orderItems">Make an order</button>
     </div>
 </template>
 
@@ -22,6 +23,11 @@ export default {
     computed: mapGetters(['buyItems']),
     components: {
         Item
+    },
+    methods: {
+        orderItems() {
+            this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItems)
+        }
     }
 }
 </script>

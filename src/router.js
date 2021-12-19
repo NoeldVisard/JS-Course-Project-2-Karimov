@@ -22,6 +22,10 @@ export default new Router({
         {
             path: '/profile',
             component: () => import('./view/ProfileView.vue')
+        },
+        {
+            path: '/orders',
+            component: () => import('./view/OrdersView.vue')
         }
     ]
 })
