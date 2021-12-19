@@ -52,12 +52,13 @@ export default {
             console.log(text);
         },
         changeProfile() {
+            console.log('changeProfile method')
             console.log(this.name)
             console.log(this.email)
             console.log(this.address)
             const newProfile = { name: this.name, email: this.email, address: this.address }
             this.$store.dispatch('changeProfile', newProfile)
-        }
+        },
     },
     computed: {
         ...mapGetters(['getProfile']),
@@ -65,7 +66,7 @@ export default {
     mounted() {
         const profile = this.$store.getters.getProfile
 
-        this.name = profile.name
+        this.name = profile.username
         this.email = profile.email
         this.address = profile.address
 

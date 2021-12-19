@@ -1,7 +1,7 @@
 export default {
     actions: {
-        changeProfile(context, name, email, address) {
-            context.commit('changeProfile', {name, email, address})
+        changeProfile(context, newProfile) {
+            context.commit('changeProfile', newProfile)
         }
 
     },
