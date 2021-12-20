@@ -82,15 +82,9 @@ export default {
             return state.items
         },
         buyItems(state) {
-            console.log(state.items.filter(it => it.count > 0))
             return state.items.filter(it => it.count > 0)
         },
-        // getItemById(state, id) {
-        //     console.log('id in getItemById ', id)
-        //     return state.items.filter(it => it.id === id)
-        // }
         getItemById: state => id => {
-            console.log('id in getItemById ', id)
             return state.items.filter(it => it.id === id)[0]
         }
     },

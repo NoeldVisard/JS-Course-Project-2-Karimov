@@ -48,10 +48,6 @@ export default {
     },
     methods: {
         changeProfile() {
-            console.log('changeProfile method')
-            console.log(this.name)
-            console.log(this.email)
-            console.log(this.address)
             const newProfile = { name: this.name, email: this.email, address: this.address }
             this.$store.dispatch('changeProfile', newProfile)
         },
@@ -65,8 +61,6 @@ export default {
         this.name = profile.username
         this.email = profile.email
         this.address = profile.address
-
-        console.log(profile);
     }
 }
 </script>

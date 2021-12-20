@@ -3,7 +3,6 @@ import item from "./item";
 export default {
     actions: {
         async addItemToOrdered(context, items) {
-            console.log(items)
             const newOrderItems = {}
             Object.assign(newOrderItems, items)
             context.commit('addItemToOrdered', newOrderItems)
@@ -16,7 +15,6 @@ export default {
     mutations: {
         addItemToOrdered(state, items) {
             state.orderedItems.push(items)
-            console.log(state.orderedItems)
         },
         deleteOrderedItems(state) {
             state.orderedItems = []

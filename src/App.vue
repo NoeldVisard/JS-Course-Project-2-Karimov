@@ -10,7 +10,6 @@
 
         <router-view @showModal="showModal"/>
 
-<!--        <Modal v-if="isModalOpen"/>-->
         <Modal v-if="isModalOpened"
         :idModal="idModal"
         @closeModal="isModalOpened = false"/>
@@ -56,7 +55,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     margin-top: 20px;
-    /*width: 600px;*/
 }
 
 </style>

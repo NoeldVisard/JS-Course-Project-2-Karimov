@@ -1,10 +1,13 @@
 <template>
     <div class="item">
-        <img :src="item.src" @click="showModal(item.id)">
-        {{ item.id }}
-        {{ item.name }}
-        {{ item.price }}
-        Chosen: {{ item.count }}
+        <div id="img-block">
+            <img :src="item.src" @click="showModal(item.id)">
+        </div>
+        <div id="info-block">
+            <p> {{ item.name }} </p>
+            <p> {{ item.price }} </p>
+            <p> Chosen: {{ item.count }} </p>
+        </div>
         <IncDecButton :item="item"></IncDecButton>
     </div>
 </template>
@@ -21,7 +24,6 @@ export default {
     },
     methods: {
         showModal(id) {
-            console.log('showModal method')
             this.$emit('showModal', id)
         }
     }
@@ -44,5 +46,11 @@ img {
     width: 200px;
     height: auto;
 }
-
+/*#img-block {*/
+/*    display: flex;*/
+/*}*/
+/*#info-block {*/
+/*    display: block;*/
+/*    flex-direction: column;*/
+/*}*/
 </style>

@@ -5,7 +5,6 @@
             <Item v-for="item of items"
                   :item="item"
                   :key="item.id"></Item>
-
         </div>
         <button @click="clearOrdered">Clear orders</button>
     </div>
@@ -27,7 +26,6 @@ export default {
     },
     computed: mapGetters(['orderedItems']),
     mounted() {
-        console.log(this.orderedItems)
     }
 
 }

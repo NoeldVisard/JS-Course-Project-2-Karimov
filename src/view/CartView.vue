@@ -26,7 +26,6 @@ export default {
         orderItems() {
             const profile = this.$store.getters.getProfile
             if (profile.username.length > 0 & profile.email.length > 0 && profile.address.length > 0) {
-                console.log(this.$store.getters.buyItems);
                 this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItems)
                 this.$router.push('/orders')
             } else {

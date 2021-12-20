@@ -31,18 +31,11 @@ export default {
 </script>
 
 <style>
-/*body {*/
-/*    background-image: none;*/
-/*    background-color: #d6dee4;*/
-/*    z-index: 2;*/
-/*}*/
 Item {
     border: 1px solid #ccc;
 }
 
 .items {
-    /*display: flex;*/
-    /*justify-content: space-between;*/
     padding: .5rem 2rem;
     margin-bottom: 1rem;
     justify-content: center;

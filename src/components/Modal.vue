@@ -47,9 +47,6 @@ export default {
     mounted() {
         this.item = this.$store.getters.getItemById(this.idModal)
     },
-    // computed: {
-    //     item: this.$store.getters.getItemById(this.idModal)
-    // }
 }
 </script>
 
