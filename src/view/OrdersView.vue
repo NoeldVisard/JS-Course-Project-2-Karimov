@@ -19,6 +19,7 @@ export default {
     name: "Orders",
     methods: {
         clearOrdered() {
+            this.$store.dispatch('deleteOrdered')
         }
     },
     components: {

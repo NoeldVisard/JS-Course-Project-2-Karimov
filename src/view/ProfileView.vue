@@ -72,6 +72,10 @@ export default {
 </script>
 
 <style scoped>
+body {
+    background-image: url("https://cdn.discordapp.com/attachments/921852012017123348/922181616158244874/kedy_nogi_obuv_135220_2560x1440.png");
+    z-index: 3;
+}
 .ghost-button {
     display: inline-block;
     width: 200px;

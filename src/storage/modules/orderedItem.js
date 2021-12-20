@@ -1,16 +1,25 @@
+import item from "./item";
+
 export default {
     actions: {
         async addItemToOrdered(context, items) {
-            context.commit('addItemToOrdered', items)
+            console.log(items)
+            const newOrderItems = {}
+            Object.assign(newOrderItems, items)
+            context.commit('addItemToOrdered', newOrderItems)
+            items.forEach(item => item.count = 0)
         },
+        async deleteOrdered(context) {
+            context.commit('deleteOrderedItems')
+        }
     },
     mutations: {
         addItemToOrdered(state, items) {
-            const newOrderItems = {}
-            Object.assign(newOrderItems, items)
-            state.orderedItems.push(newOrderItems)
+            state.orderedItems.push(items)
             console.log(state.orderedItems)
-            items.forEach(item => item.count = 0)
+        },
+        deleteOrderedItems(state) {
+            state.orderedItems = []
         }
     },
     state: {

@@ -1,6 +1,5 @@
 <template>
     <div class="item">
-        Item
         <img :src="item.src" @click="showModal(item.id)">
         {{ item.id }}
         {{ item.name }}
@@ -33,10 +32,13 @@ export default {
 .item {
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 1rem;
+    /*margin-bottom: 1rem;*/
     width: 400px;
 
     display: inline-block;
+    background-color: rgba(194, 234, 246, 0.91);
+
+    margin: 1rem 1rem 1rem;
 }
 img {
     width: 200px;

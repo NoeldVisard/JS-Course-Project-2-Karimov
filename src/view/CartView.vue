@@ -1,8 +1,6 @@
 <template>
     <div>
         <h3>Cart</h3>
-        <router-link to="/catalog">Catalog</router-link>
-        <router-link to="/profile">Profile</router-link>
         <div class="items">
             <Item
                 v-for="item of buyItems"
@@ -26,7 +24,15 @@ export default {
     },
     methods: {
         orderItems() {
-            this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItems)
+            const profile = this.$store.getters.getProfile
+            if (profile.username.length > 0 & profile.email.length > 0 && profile.address.length > 0) {
+                console.log(this.$store.getters.buyItems);
+                this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItems)
+                this.$router.push('/orders')
+            } else {
+                alert('No profile data!')
+                this.$router.push('/profile')
+            }
         }
     }
 }
