@@ -86,6 +86,9 @@ export default {
         },
         getItemById: state => id => {
             return state.items.filter(it => it.id === id)[0]
+        },
+        isItemsForBuy(state) {
+            return state.items.filter(it => it.count > 0).length > 0
         }
     },
 }

@@ -8,7 +8,7 @@
                 :item="item"
                 @showModal="$emit('showModal', item.id)"></Item>
         </div>
-        <button @click="orderItems">Make an order</button>
+        <button v-if="isItemsForBuy" @click="orderItems">Make an order</button>
     </div>
 </template>
 
@@ -18,7 +18,7 @@ import {mapGetters} from 'vuex'
 
 export default {
     name: "Cart",
-    computed: mapGetters(['buyItems']),
+    computed: mapGetters(['buyItems', 'isItemsForBuy']),
     components: {
         Item
     },
