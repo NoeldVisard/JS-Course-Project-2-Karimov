@@ -13,9 +13,9 @@
                     <div>
                         <!--                    TODO: make style this block acceptable-->
                         <img :src="item.src">
-                        {{ item.description }}
-                        {{ item.price }}
-                        Chosen: {{ item.count }}
+                        <p>{{ item.description }}</p>
+                        <p>{{ item.price }}</p>
+                        <p>Chosen: {{ item.count }}</p>
                     </div>
                     <IncDecButton :item="item"></IncDecButton>
                 </div>

@@ -1,4 +1,4 @@
-import item from "./item";
+// import item from "./item";
 
 export default {
     actions: {
@@ -14,10 +14,14 @@ export default {
     },
     mutations: {
         addItemToOrdered(state, items) {
+
             state.orderedItems.push(items)
         },
         deleteOrderedItems(state) {
             state.orderedItems = []
+        },
+        removeCounts(state) {
+            state.items = state.items.map((el) => ({...el, count: 0}))
         }
     },
     state: {

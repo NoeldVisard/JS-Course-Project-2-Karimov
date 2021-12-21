@@ -4,7 +4,8 @@
         <div v-for="(items, id) of orderedItems" :key="id">
             <Item v-for="item of items"
                   :item="item"
-                  :key="item.id"></Item>
+                  :key="item.id"
+            @showModal="showModal"></Item>
         </div>
         <button @click="clearOrdered">Clear orders</button>
     </div>
@@ -19,6 +20,9 @@ export default {
     methods: {
         clearOrdered() {
             this.$store.dispatch('deleteOrdered')
+        },
+        showModal(id) {
+            this.$emit('showModal', id)
         }
     },
     components: {
