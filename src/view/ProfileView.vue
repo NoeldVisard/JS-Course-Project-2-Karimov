@@ -1,6 +1,5 @@
 <template>
     <div>
-        <!--        <h3>Profile</h3>-->
         <div class="login-box">
             <h2>Profile</h2>
             <router-link to="/catalog">Catalog</router-link>
@@ -24,19 +23,13 @@
                     <span></span>
                     <span></span>
                     <input class="ghost-button" type="submit" value="SAVE">
-
                 </a>
-
             </form>
         </div>
-
     </div>
-
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
-
 export default {
     name: "ProfileView",
     data() {
@@ -49,18 +42,17 @@ export default {
     methods: {
         changeProfile() {
             const newProfile = { name: this.name, email: this.email, address: this.address }
-            this.$store.dispatch('changeProfile', newProfile)
+            localStorage.setItem('profile', JSON.stringify(newProfile))
         },
     },
-    computed: {
-        ...mapGetters(['getProfile']),
-    },
     mounted() {
-        const profile = this.$store.getters.getProfile
-
-        this.name = profile.username
-        this.email = profile.email
-        this.address = profile.address
+        const profile = JSON.parse(localStorage.getItem('profile'))
+        const isEmptyProfile = !(profile.name && profile.email && profile.address)
+        if (!isEmptyProfile){
+            this.name = profile.name
+            this.email = profile.email
+            this.address = profile.address
+        }
     }
 }
 </script>

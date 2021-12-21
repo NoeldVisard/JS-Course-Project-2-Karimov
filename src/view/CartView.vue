@@ -24,8 +24,9 @@ export default {
     },
     methods: {
         orderItems() {
-            const profile = this.$store.getters.getProfile
-            if (profile.username.length > 0 & profile.email.length > 0 && profile.address.length > 0) {
+            const profile = JSON.parse(localStorage.getItem('profile'))
+            const isEmptyProfile = !(profile.name && profile.email && profile.address)
+            if (!isEmptyProfile) {
                 this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItems)
                 this.$router.push('/orders')
             } else {
