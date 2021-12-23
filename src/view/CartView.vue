@@ -18,7 +18,7 @@ import {mapGetters} from 'vuex'
 
 export default {
     name: "Cart",
-    computed: mapGetters(['buyItems', 'isItemsForBuy']),
+    computed: mapGetters(['buyItems', 'isItemsForBuy', 'buyItemsId']),
     components: {
         Item
     },
@@ -27,7 +27,7 @@ export default {
             const profile = JSON.parse(localStorage.getItem('profile'))
             const isEmptyProfile = !(profile.name && profile.email && profile.address)
             if (!isEmptyProfile) {
-                this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItems)
+                this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItemsId)
                 this.$router.push('/orders')
             } else {
                 alert('No profile data!')

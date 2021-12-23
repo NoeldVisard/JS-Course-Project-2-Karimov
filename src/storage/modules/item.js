@@ -84,8 +84,19 @@ export default {
         buyItems(state) {
             return state.items.filter(it => it.count > 0)
         },
+        buyItemsId(state) {
+            return state.items.filter(it => it.count > 0).map(it => it.id)
+        },
         getItemById: state => id => {
-            return state.items.filter(it => it.id === id)[0]
+            // return state.items.filter(it => it.id === id)[0]
+            return state.items.find(it => it.id === id)
+        },
+        getAllItems(state) {
+            const res = {}
+            state.items.forEach(item => {
+                res[item.id] = item
+            })
+            return res
         },
         isItemsForBuy(state) {
             return state.items.filter(it => it.count > 0).length > 0
