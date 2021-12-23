@@ -5,6 +5,7 @@
             <Item v-for="item of items"
                   :item="item"
                   :key="item.id"
+                  :isItemForBuy="false"
             @showModal="showModal"></Item>
         </div>
         <button @click="clearOrdered">Clear orders</button>

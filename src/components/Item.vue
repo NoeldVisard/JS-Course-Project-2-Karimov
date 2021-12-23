@@ -8,7 +8,7 @@
             <p> {{ item.price }} </p>
             <p> Chosen: {{ item.count }} </p>
         </div>
-        <IncDecButton :item="item"></IncDecButton>
+        <IncDecButton v-if="isItemForBuy" :item="item"></IncDecButton>
     </div>
 </template>
 
@@ -20,6 +20,10 @@ export default {
         item: {
             type: Object,
             default: {}
+        },
+        isItemForBuy: {
+            type: Boolean,
+            default: true
         }
     },
     methods: {
