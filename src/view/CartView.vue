@@ -27,7 +27,31 @@ export default {
             const profile = JSON.parse(localStorage.getItem('profile'))
             const isEmptyProfile = !(profile.name && profile.email && profile.address)
             if (!isEmptyProfile) {
-                this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItemsId)
+                // this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItemsId)
+                // const newOrders = JSON.parse(localStorage.getItem('orders')).concat(this.$store.getters.buyItemsId)
+
+                // let newOrders = []
+                // const orders = JSON.parse(localStorage.getItem('orders'))
+                // if (orders) { // TODO: check does it need .length > 0
+                //     newOrders.push(...orders)
+                // }
+                // // newOrders.push(...this.$store.getters.buyItemsId)
+                // localStorage.setItem('ordersId', JSON.stringify(newOrders))
+                //
+                // const ordersCount = []
+                // for (const item of this.$store.getters.buyItems) {
+                //     ordersCount.push(item.count)
+                // }
+                // localStorage.setItem('ordersCount', JSON.stringify(ordersCount))
+
+                let orderItems = []
+                const orderedItems = JSON.parse(localStorage.getItem('order'))
+                if (orderedItems) {
+                    orderItems.push(...orderedItems)
+                }
+                orderItems.push(...this.$store.getters.buyItems)
+                localStorage.setItem('order', JSON.stringify(orderItems))
+
                 this.$router.push('/orders')
             } else {
                 alert('No profile data!')

@@ -11,8 +11,9 @@
         <router-view @showModal="showModal"/>
 
         <Modal v-if="isModalOpened"
-        :idModal="idModal"
-        @closeModal="isModalOpened = false"/>
+               :idModal="idModal"
+               :isShowCntBtn="isShowCntBtn"
+               @closeModal="isModalOpened = false"/>
     </div>
 </template>
 
@@ -24,7 +25,8 @@ export default {
     data() {
         return {
             isModalOpened: false,
-            idModal: 0
+            idModal: 0,
+            isShowCntBtn: true
         }
     },
     components: {
@@ -34,8 +36,9 @@ export default {
         await this.$store.dispatch('createItems')
     },
     methods: {
-        showModal(id) {
+        showModal(id, isShowCntBtn) {
             this.idModal = id
+            this.isShowCntBtn = isShowCntBtn
             this.isModalOpened = true
         },
         closeModal() {
@@ -49,6 +52,7 @@ export default {
 body {
     background-image: url("https://cdn.discordapp.com/attachments/921852012017123348/922181616158244874/kedy_nogi_obuv_135220_2560x1440.png");
 }
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

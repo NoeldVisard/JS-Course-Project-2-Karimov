@@ -15,9 +15,10 @@
                         <img :src="item.src">
                         <p>{{ item.description }}</p>
                         <p>{{ item.price }}</p>
-                        <p>Chosen: {{ item.count }}</p>
+                        <p v-if="boughtCount === 0">Chosen: {{ item.count }}</p>
+                        <p>Chosen: {{ boughtCount }}</p>
                     </div>
-                    <IncDecButton :item="item"></IncDecButton>
+                    <IncDecButton v-if="isShowCntBtn" :item="item"></IncDecButton>
                 </div>
             </div>
         </div>
@@ -37,15 +38,26 @@ export default {
         idModal: {
             type: Number,
             default: 0
+        },
+        isShowCntBtn: {
+            type: Boolean,
+            default: true
         }
     },
     data() {
         return {
             item: {},
+            boughtCount: 0
         }
     },
     mounted() {
         this.item = this.$store.getters.getItemById(this.idModal)
+        if (!this.isShowCntBtn) {
+            const orderedItems = JSON.parse(localStorage.getItem('order'))
+            this.boughtCount = orderedItems.find(item => item.id === this.idModal).count
+            console.log('orderedItems.find(item => item.id === this.idModal).count:', orderedItems.find(item => item.id === this.idModal).count)
+            console.log(this.count);
+        }
     },
 }
 </script>
