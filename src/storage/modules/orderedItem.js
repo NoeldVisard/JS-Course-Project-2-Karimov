@@ -23,9 +23,6 @@ export default {
         },
         deleteOrderedItems(state) {
             state.orderedItems = []
-        },
-        removeCounts(state) {
-            state.items = state.items.map((el) => ({...el, count: 0}))
         }
     },
     state: {

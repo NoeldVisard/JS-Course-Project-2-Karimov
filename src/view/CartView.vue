@@ -52,6 +52,8 @@ export default {
                 orderItems.push(...this.$store.getters.buyItems)
                 localStorage.setItem('order', JSON.stringify(orderItems))
 
+                this.$store.dispatch('resetItemCount')
+
                 this.$router.push('/orders')
             } else {
                 alert('No profile data!')

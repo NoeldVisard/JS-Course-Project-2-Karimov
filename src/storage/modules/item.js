@@ -62,6 +62,9 @@ export default {
                 item.count--
                 context.commit('addItem', item)
             } else console.log('You cannot buy less than 0 \\_(ツ)_/¯ ')
+        },
+        resetItemCount(context) {
+            context.commit('removeCounts')
         }
     },
     mutations: {
@@ -72,6 +75,9 @@ export default {
             state.items = state.items.filter(it => it.id !== item.id)
             state.items = state.items.concat(item)
             state.items.sort((prev, next) => prev.id - next.id)
+        },
+        removeCounts(state) {
+            state.items = state.items.map((el) => ({...el, count: 0}))
         }
     },
     state: {
