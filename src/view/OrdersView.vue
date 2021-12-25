@@ -30,11 +30,18 @@ export default {
     },
     methods: {
         clearOrdered() {
-            // this.$store.dispatch('deleteOrdered')
-            // TODO
+            localStorage.removeItem('order')
+            // this.$router.go()
+            // window.location.reload()
+            // this.$forceUpdate();
+            // this.mounted()
+            this.orderedItems = this.updatedOrderedItems()
         },
         showModal(id) {
             this.$emit('showModal', id, false)
+        },
+        updatedOrderedItems() {
+            return JSON.parse(localStorage.getItem('order'))
         }
     },
     components: {
@@ -53,9 +60,7 @@ export default {
         //     this.orderedItems.push(Object.assign({}, this.$store.getters.getItemById(id)))
         // }
 
-        this.orderedItems = JSON.parse(localStorage.getItem('order'))
-
-
+        this.orderedItems = this.updatedOrderedItems()
     }
 
 }
