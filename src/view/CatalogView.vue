@@ -6,7 +6,7 @@
                 v-for="item of allItems"
                 :key="item.id"
                 :item="item"
-            @showModal="showModal"></Item>
+            @showModal="showModal" class="item"></Item>
         </div>
     </div>
 </template>
@@ -31,14 +31,14 @@ export default {
 </script>
 
 <style>
-Item {
+.item {
     border: 1px solid #ccc;
 }
 
 .items {
     padding: .5rem 2rem;
     margin-bottom: 1rem;
-    justify-content: center;
+    /*justify-content: center;*/
 
 }
 </style>

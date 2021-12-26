@@ -51,6 +51,7 @@ export default {
 <style>
 body {
     background-image: url("https://cdn.discordapp.com/attachments/921852012017123348/922181616158244874/kedy_nogi_obuv_135220_2560x1440.png");
+    background-size: cover;
 }
 
 #app {
@@ -59,6 +60,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     margin-top: 20px;
+}
+
+a:hover {
+    background: #60b5fa;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #60b5fa,
+    0 0 25px #60b5fa,
+    0 0 50px #60b5fa,
+    0 0 100px #60b5fa;
 }
 
 </style>

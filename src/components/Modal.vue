@@ -11,12 +11,11 @@
                 <p class="modal__title">{{ item.name }}</p>
                 <div class="data-place">
                     <div>
-                        <!--                    TODO: make style this block acceptable-->
                         <img :src="item.src">
                         <p>{{ item.description }}</p>
                         <p>{{ item.price }}</p>
                         <p v-if="boughtCount === 0">Chosen: {{ item.count }}</p>
-                        <p>Chosen: {{ boughtCount }}</p>
+                        <p v-else>Chosen: {{ boughtCount }}</p>
                     </div>
                     <IncDecButton v-if="isShowCntBtn" :item="item"></IncDecButton>
                 </div>

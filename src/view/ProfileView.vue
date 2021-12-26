@@ -2,8 +2,6 @@
     <div>
         <div class="login-box">
             <h2>Profile</h2>
-            <router-link to="/catalog">Catalog</router-link>
-            <router-link to="/cart">Cart</router-link>
             <form onsubmit="return false">
                 <div class="user-box">
                     <input type="text" name="" required v-model="name">

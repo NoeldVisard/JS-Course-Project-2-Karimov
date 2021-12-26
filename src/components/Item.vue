@@ -7,8 +7,8 @@
             <p> {{ item.name }} </p>
             <p> {{ item.price }} </p>
             <p> Chosen: {{ item.count }} </p>
+            <IncDecButton v-if="isItemForBuy" :item="item"></IncDecButton>
         </div>
-        <IncDecButton v-if="isItemForBuy" :item="item"></IncDecButton>
     </div>
 </template>
 
@@ -38,8 +38,7 @@ export default {
 .item {
     border: 1px solid #ccc;
     border-radius: 5px;
-    /*margin-bottom: 1rem;*/
-    width: 400px;
+    width: 25%;
 
     display: inline-block;
     background-color: rgba(194, 234, 246, 0.91);
@@ -49,12 +48,11 @@ export default {
 img {
     width: 200px;
     height: auto;
+    margin-left: 1rem;
 }
-/*#img-block {*/
-/*    display: flex;*/
-/*}*/
-/*#info-block {*/
-/*    display: block;*/
-/*    flex-direction: column;*/
-/*}*/
+#img-block {
+    float: left;
+}
+#info-block {
+}
 </style>
