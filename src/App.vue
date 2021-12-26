@@ -32,8 +32,8 @@ export default {
     components: {
         Modal
     },
-    async mounted() {
-        await this.$store.dispatch('createItems')
+    mounted() {
+        this.$store.dispatch('createItems')
     },
     methods: {
         showModal(id, isShowCntBtn) {

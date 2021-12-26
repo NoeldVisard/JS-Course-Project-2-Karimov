@@ -53,6 +53,4 @@ img {
 #img-block {
     float: left;
 }
-#info-block {
-}
 </style>

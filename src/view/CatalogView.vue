@@ -25,8 +25,6 @@ export default {
             this.$emit('showModal', id)
         }
     }
-
-
 }
 </script>
 
@@ -38,7 +36,5 @@ export default {
 .items {
     padding: .5rem 2rem;
     margin-bottom: 1rem;
-    /*justify-content: center;*/
-
 }
 </style>

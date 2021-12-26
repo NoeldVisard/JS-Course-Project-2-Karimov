@@ -2,7 +2,6 @@
     <div>
         <div class="modal active" data-modal="1">
             <div id="modalColor">
-                <!--   Svg иконка для закрытия окна  -->
                 <svg @click="$emit('closeModal')" class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24">
                     <path
@@ -21,8 +20,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Подложка под модальным окном -->
         <div class="overlay js-overlay-modal  active"></div>
     </div>
 </template>
@@ -54,8 +51,6 @@ export default {
         if (!this.isShowCntBtn) {
             const orderedItems = JSON.parse(localStorage.getItem('order'))
             this.boughtCount = orderedItems.find(item => item.id === this.idModal).count
-            console.log('orderedItems.find(item => item.id === this.idModal).count:', orderedItems.find(item => item.id === this.idModal).count)
-            console.log(this.count);
         }
     },
 }
@@ -84,10 +79,8 @@ export default {
 }
 
 .modal {
-
     opacity: 0;
     visibility: hidden;
-
 
     width: 100%;
     max-width: 500px;
@@ -96,9 +89,8 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 30; /* Должен быть выше чем у подложки*/
+    z-index: 30;
 
-    /*  Побочные стили   */
     box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
     text-align: center;
     padding: 30px;
@@ -109,13 +101,9 @@ export default {
 
 .modal.active,
 .overlay.active {
-    /*background-color: rgba(194, 234, 246, 0.91);*/
     opacity: 1;
     visibility: visible;
 }
-
-
-/* Стили для кнопки закрытия */
 
 .modal__cross {
     width: 15px;
@@ -126,5 +114,4 @@ export default {
     fill: #444;
     cursor: pointer;
 }
-
 </style>

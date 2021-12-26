@@ -45,7 +45,6 @@ export default {
     },
     mounted() {
         const profile = JSON.parse(localStorage.getItem('profile'))
-        // const isEmptyProfile = !(profile.name && profile.email && profile.address)
         if (profile){
             this.name = profile.name
             this.email = profile.email
@@ -73,7 +72,6 @@ body {
 
 .ghost-button:hover,
 .ghost-button:active {
-    /*background-color: #02dbf8;*/
     background-color: #60b5fa;
     color: #000;
 }
@@ -247,6 +245,5 @@ body {
         bottom: 100%;
     }
 }
-
 
 </style>

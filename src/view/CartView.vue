@@ -8,7 +8,6 @@
                 :item="item"
                 @showModal="$emit('showModal', item.id)"></Item>
         </div>
-<!--        <button v-if="isItemsForBuy" @click="orderItems">Make an order</button>-->
         <a class="botr" v-if="isItemsForBuy" @click="orderItems">Make an order</a>
     </div>
 </template>
@@ -26,25 +25,7 @@ export default {
     methods: {
         orderItems() {
             const profile = JSON.parse(localStorage.getItem('profile'))
-            // const isEmptyProfile = !(profile.name && profile.email && profile.address)
             if (profile) {
-                // this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItemsId)
-                // const newOrders = JSON.parse(localStorage.getItem('orders')).concat(this.$store.getters.buyItemsId)
-
-                // let newOrders = []
-                // const orders = JSON.parse(localStorage.getItem('orders'))
-                // if (orders) { // TODO: check does it need .length > 0
-                //     newOrders.push(...orders)
-                // }
-                // // newOrders.push(...this.$store.getters.buyItemsId)
-                // localStorage.setItem('ordersId', JSON.stringify(newOrders))
-                //
-                // const ordersCount = []
-                // for (const item of this.$store.getters.buyItems) {
-                //     ordersCount.push(item.count)
-                // }
-                // localStorage.setItem('ordersCount', JSON.stringify(ordersCount))
-
                 let orderItems = []
                 const orderedItems = JSON.parse(localStorage.getItem('order'))
                 if (orderedItems) {
@@ -86,7 +67,7 @@ a.botr{
     -webkit-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
     -moz-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
     -o-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
-    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); /* linear */
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
 }
 a.botr:hover{
     width:225px;
@@ -99,7 +80,7 @@ a.botr:hover{
     -webkit-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
     -moz-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
     -o-transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
-    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750); /* linear */
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
 }
 
 </style>

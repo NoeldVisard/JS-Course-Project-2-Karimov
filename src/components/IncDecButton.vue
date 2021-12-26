@@ -64,6 +64,4 @@ button.red:hover {
     background-color: rgb(183, 75, 104);
 }
 
-
-
 </style>

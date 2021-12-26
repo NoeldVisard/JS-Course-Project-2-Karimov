@@ -1,6 +1,6 @@
 export default {
     actions: {
-        async createItems(context) {
+        createItems(context) {
             const items = [
                 {
                     id: 0,
@@ -53,11 +53,11 @@ export default {
             ]
             context.commit('createItems', items)
         },
-        async incCountItem(context, item) {
+        incCountItem(context, item) {
             item.count++
             context.commit('addItem', item)
         },
-        async decCountItem(context, item) {
+        decCountItem(context, item) {
             if (item.count > 0) {
                 item.count--
                 context.commit('addItem', item)
@@ -94,15 +94,7 @@ export default {
             return state.items.filter(it => it.count > 0).map(it => it.id)
         },
         getItemById: state => id => {
-            // return state.items.filter(it => it.id === id)[0]
             return state.items.find(it => it.id === id)
-        },
-        getAllItems(state) {
-            const res = {}
-            state.items.forEach(item => {
-                res[item.id] = item
-            })
-            return res
         },
         isItemsForBuy(state) {
             return state.items.filter(it => it.count > 0).length > 0
