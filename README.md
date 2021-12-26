@@ -89,3 +89,11 @@ vue-router:
 `npm i vue-router`
 
 `npm i vuex`
+
+eslint:
+
+`npm install eslint --save-dev`
+
+Set up a configuration file: 
+
+`npx eslint --init`
