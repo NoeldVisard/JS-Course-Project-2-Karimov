@@ -45,8 +45,8 @@ export default {
     },
     mounted() {
         const profile = JSON.parse(localStorage.getItem('profile'))
-        const isEmptyProfile = !(profile.name && profile.email && profile.address)
-        if (!isEmptyProfile){
+        // const isEmptyProfile = !(profile.name && profile.email && profile.address)
+        if (profile){
             this.name = profile.name
             this.email = profile.email
             this.address = profile.address

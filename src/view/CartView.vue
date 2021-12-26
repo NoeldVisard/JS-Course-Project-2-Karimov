@@ -26,8 +26,8 @@ export default {
     methods: {
         orderItems() {
             const profile = JSON.parse(localStorage.getItem('profile'))
-            const isEmptyProfile = !(profile.name && profile.email && profile.address)
-            if (!isEmptyProfile) {
+            // const isEmptyProfile = !(profile.name && profile.email && profile.address)
+            if (profile) {
                 // this.$store.dispatch('addItemToOrdered', this.$store.getters.buyItemsId)
                 // const newOrders = JSON.parse(localStorage.getItem('orders')).concat(this.$store.getters.buyItemsId)
 
